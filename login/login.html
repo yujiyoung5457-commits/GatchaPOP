@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <!-- 헤더 부분 시작 -->
+       <header>
+        <div class="inner">
+        <nav>
+            <a class="logo" href="../index.html" aria-label="홈으로 이동"></a>
+            <ul>
+                <li>
+                    <a href="../Pickup/pickup.html">Pick Up!&nbsp;&nbsp;|</a>
+                </li>
+
+                <li>
+                    <a href="../Drop/drop.html">Drop!&nbsp;&nbsp;|</a>
+                </li>
+
+                <li>
+                    <a href="../who/who.html">Gatchas&nbsp;&nbsp;|</a>
+                </li>
+
+                <li>
+                    <a href="../myroot/myroot.html">My Root&nbsp;&nbsp;|</a>
+                </li>
+
+                <li>
+                    <a href="../login/login.html">Login</a>
+                </li>
+            </ul>
+        </nav>
+        </div>
+       </header>
+       <!-- section1의 시작 -->
+        <section class="section1">
+    <div class="login-section-inner">
+        <div class="login-panel">
+            <h1>LOGIN</h1>
+
+            <form class="login-form" action="#" method="post">
+                <label class="sr-only" for="login-email">사용자 이메일</label>
+                <input id="login-email" name="email" type="email"
+                       placeholder="사용자 이메일" autocomplete="email" required>
+
+                <label class="sr-only" for="login-password">비밀번호</label>
+                <input id="login-password" name="password" type="password"
+                       placeholder="비밀번호" autocomplete="current-password" required>
+
+                <button type="submit">로그인</button>
+            </form>
+
+            <p class="sns-login-title">SNS 계정으로 로그인하기</p>
+            <div class="sns-login-buttons" aria-label="SNS 로그인">
+                <button class="sns-login naver" type="button" aria-label="네이버로 로그인">N</button>
+                <button class="sns-login kakao" type="button" aria-label="카카오로 로그인">K</button>
+                <button class="sns-login facebook" type="button" aria-label="페이스북으로 로그인">f</button>
+                <button class="sns-login apple" type="button" aria-label="Apple로 로그인">●</button>
+            </div>
+
+            <p class="signup-guide">
+                계정이 없으신가요?
+                <a href="#">가입하기</a>
+            </p>
+        </div>
+
+        <div class="login-visual">
+            <img class="login-character" src="../all/chara-nomal.svg" alt="로그인을 안내하는 퐁이">
+            <img class="login-machine" src="../all/machine-front.svg" alt="가챠 머신">
+        </div>
+    </div>
+</section>
+</body>
+</html>

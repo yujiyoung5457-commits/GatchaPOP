@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 152.3 157.3">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #ffa9c2;
+      }
+
+      .st1 {
+        fill: #ffd4f6;
+      }
+
+      .st2 {
+        stroke: #ff4e72;
+      }
+
+      .st2, .st3 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .st3 {
+        stroke: #ff73d0;
+      }
+
+      .st4 {
+        fill: #bff;
+      }
+
+      .st5 {
+        fill: #ff4e72;
+      }
+
+      .st6 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="2" y1="53.1" x2="150.3" y2="53.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff73d0"/>
+      <stop offset="1" stop-color="#6ccef1"/>
+    </linearGradient>
+  </defs>
+  <ellipse class="st4" cx="76.1" cy="78.6" rx="74.1" ry="76.6"/>
+  <ellipse class="st2" cx="76.1" cy="78.6" rx="74.1" ry="76.6"/>
+  <path class="st5" d="M150.3,79.6C150.3,37.3,117.1,2.9,76.1,2.9S2,37.3,2,79.6h148.3Z"/>
+  <path class="st5" d="M150.2,74.2c0,16.1-34,29.1-75.9,29.1S2.1,90.2,2.1,74.2s30.3-29.1,72.2-29.1,75.9,13,75.9,29.1Z"/>
+  <ellipse class="st0" cx="104.3" cy="19.4" rx="4.5" ry="5.1" transform="translate(39.6 103.5) rotate(-62.9)"/>
+  <ellipse class="st4" cx="76.1" cy="78.6" rx="74.1" ry="76.6"/>
+  <path class="st6" d="M150.3,79.6c0-1.6,0-3.1-.1-4.6,0-.3,0-.5,0-.8,0-.9-.1-1.7-.3-2.6C146,33,114.5,2.9,76.1,2.9S6.5,32.8,2.5,71.1c-.2,1-.4,2-.4,3s0,.6,0,.9c0,1.5-.1,3-.1,4.6h1.3c6,13.5,33.9,23.7,71,23.7s67.9-10.2,74.6-23.7h1.4Z"/>
+  <ellipse class="st1" cx="104.3" cy="19.4" rx="4.5" ry="5.1" transform="translate(39.6 103.5) rotate(-62.9)"/>
+  <ellipse class="st3" cx="76.1" cy="78.6" rx="74.1" ry="76.6"/>
+</svg>

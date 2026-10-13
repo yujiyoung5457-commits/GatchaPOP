@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body id="top" class="polka-dot">
+    <!-- 헤더 부분 시작 -->
+       <header>
+        <div class="inner">
+        <nav>
+            <a class="logo" href="./index.html" aria-label="홈으로 이동"></a>
+            <ul>
+                <li>
+                    <a href="./Pickup/pickup.html">Pick Up!&nbsp;&nbsp;|</a>
+                </li>
+
+                <li>
+                    <a href="./Drop/drop.html">&nbsp;&nbsp;Drop!&nbsp;&nbsp;|</a>
+                </li>
+
+                <li>
+                    <a href="./who/who.html">&nbsp;&nbsp;Gatchas&nbsp;&nbsp;|</a>
+                </li>
+
+                <li>
+                    <a href="./myroot/myroot.html">&nbsp;&nbsp;My Root&nbsp;&nbsp;|</a>
+                </li>
+
+                <li>
+                    <a href="./login/login.html">&nbsp;&nbsp;Login</a>
+                </li>
+            </ul>
+        </nav>
+        </div>
+       </header>
+       <!-- 섹션이 시작하는 부분 -->
+       <section class="heroSection1">
+        <canvas class="hero-bubbles" aria-hidden="true"></canvas>
+        <div class="inner_section">
+           <div class="txtBox1">
+            <div class="hero-word"><img src="./all/welcome.png" alt="Welcome"></div>
+            <div class="hero-word hero-to-row">
+                <a class="hero-pickup-button" href="./Pickup/pickup.html">뽑으러 가기</a>
+                <img src="./all/to.png" alt="to">
+            </div>
+            <div class="hero-word"><img src="./all/gatcha-01.png" alt="Gatcha"></div>
+            <div class="hero-word"><img src="./all/pop.png" alt="Pop"></div>
+            <div class="pong-3d" aria-label="3D 퐁이 캐릭터">
+                <canvas class="pong-3d-canvas"></canvas>
+                <p class="pong-3d-status">퐁이를 불러오는 중...</p>
+            </div>
+           </div> 
+
+           <div class="imgBox" aria-label="로그인과 회원가입 가챠 캡슐">
+            <div class="ball-lane">
+                <div class="ball-track">
+                    <div class="ball-slide-set">
+                        <img src="./all/ball01.png" alt="가챠 캡슐">
+                        <a href="./login/login.html" class="ball-link">
+                            <img src="./all/ball03.png" alt="로그인">
+                            <span></span>
+                        </a>
+                        <img src="./all/ball02.png" alt="가챠 캡슐">
+                    </div>
+                </div>
+            </div>
+            <div class="ball-lane ball-lane-reverse">
+                <div class="ball-track">
+                    <div class="ball-slide-set">
+                        <a href="./login/login.html" class="ball-link">
+                            <img src="./all/ball03.png" alt="회원가입">
+                            <span></span>
+                        </a>
+                        <img src="./all/ball02.png" alt="가챠 캡슐">
+                        <img src="./all/ball01.png" alt="가챠 캡슐">
+                    </div>
+                </div>
+            </div>
+            <div class="ball-lane">
+                <div class="ball-track">
+                    <div class="ball-slide-set">
+                        <img src="./all/ball01.png" alt="가챠 캡슐">
+                        <img src="./all/ball02.png" alt="가챠 캡슐">
+                        <img src="./all/ball03.png" alt="가챠 캡슐">
+                    </div>
+                </div>
+            </div>
+           </div>
+           <!-- 히어로 하단 3D 퐁이: 위치와 크기는 .pong-3d--bottom CSS에서 조절 -->
+           <div class="pong-3d pong-3d--bottom" aria-label="히어로 하단 3D 퐁이 캐릭터">
+               <canvas class="pong-3d-canvas"></canvas>
+               <p class="pong-3d-status">퐁이를 불러오는 중...</p>
+           </div>
+        </div>
+       </section>
+       <!-- 셋션2가 시작하는 부분 -->
+        <section class="section2">
+            <div class="inner2">
+                <div class="maintext1">
+                    지금 SNS에서 인기인 상품!
+                </div>
+                <!-- 슬라이더 시작 -->
+                 <div class="slider-wrap">
+                    <button class="slider-button slider-prev" type="button" aria-label="이전 상품">&#10094;</button>
+                    <div class="slider" tabindex="0">
+                    <article class="sns-card">
+                        <img class="sns-poster" src="./all/1.png" alt="헬로키티 가챠 포스터">
+                        <div class="sns-content">
+                            <div class="sns-title-row">
+                                <h2>Gothic Tokki</h2>
+                                <div class="sns-icons" aria-label="SNS 채널">
+                                    <img src="./img/X.png" alt="X">
+                                    <img src="./img/Instagram_icon.png" alt="Instagram">
+                                    <img src="./img/img.png" alt="Facebook">
+                                </div>
+                            </div>
+                            <strong>@hello_kitty 가챠 트위터 X</strong>
+                            <p>이번 신상 Gothic Tokki 가챠를 소개해요!<br>가까이에서 만나 보세요.</p>
+                        </div>
+                    </article>
+
+                    <article class="sns-card">
+                        <img class="sns-poster" src="./all/2.png" alt="캐릭터 가챠 포스터">
+                        <div class="sns-content">
+                            <div class="sns-title-row">
+                                <h2>퐁이 인형 가챠!</h2>
+                                <div class="sns-icons" aria-label="SNS 채널">
+                                    <img src="./img/X.png" alt="X">
+                                    <img src="./img/Instagram_icon.png" alt="Instagram">
+                                    <img src="./img/img.png" alt="Facebook">
+                                </div>
+                            </div>
+                            <strong>@hello_kitty 공식 트위터 X</strong>
+                            <p>귀여운 신상 가챠 소식을 확인하고<br>가까이에서 만나 보세요.</p>
+                        </div>
+                    </article>
+
+                    <article class="sns-card">
+                        <img class="sns-poster" src="./all/3.png" alt="헬로키티 가챠 컬렉션 포스터">
+                        <div class="sns-content">
+                            <div class="sns-title-row">
+                                <h2>ZOMBIE BEAR</h2>
+                                <div class="sns-icons" aria-label="SNS 채널">
+                                    <img src="./img/X.png" alt="X">
+                                    <img src="./img/Instagram_icon.png" alt="Instagram">
+                                    <img src="./img/img.png" alt="Facebook">
+                                </div>
+                            </div>
+                            <strong>@hello_kitty 공식 트위터 X</strong>
+                            <p>이번 신상 좀비베어 가챠를 소개해요!<br>가까이에서 만나 보세요.</p>
+                        </div>
+                    </article>
+
+                    <article class="sns-card">
+                        <img class="sns-poster" src="./all/4.png" alt="캐릭터 가챠 포스터">
+                        <div class="sns-content">
+                            <div class="sns-title-row">
+                                <h2>보보버니💕</h2>
+                                <div class="sns-icons" aria-label="SNS 채널">
+                                    <img src="./img/X.png" alt="X">
+                                    <img src="./img/Instagram_icon.png" alt="Instagram">
+                                    <img src="./img/img.png" alt="Facebook">
+                                </div>
+                            </div>
+                            <strong>@gatchapop 공식 트위터 X</strong>
+                            <p>새롭게 입고된 인기 가챠를 소개해요!<br>가까이에서 만나 보세요.</p>
+                        </div>
+                    </article>
+
+                    <article class="sns-card">
+                        <img class="sns-poster" src="./all/5.png" alt="캐릭터 가챠 컬렉션 포스터">
+                        <div class="sns-content">
+                            <div class="sns-title-row">
+                                <h2>인기 가챠!</h2>
+                                <div class="sns-icons" aria-label="SNS 채널">
+                                    <img src="./img/X.png" alt="X">
+                                    <img src="./img/Instagram_icon.png" alt="Instagram">
+                                    <img src="./img/img.png" alt="Facebook">
+                                </div>
+                            </div>
+                            <strong>@gatchapop 공식 트위터 X</strong>
+                            <p>SNS에서 인기인 가챠 소식을 확인하고<br>가까이에서 만나 보세요.</p>
+                        </div>
+                    </article>
+
+                    <article class="sns-card">
+                        <img class="sns-poster" src="./all/10.png" alt="캐릭터 가챠 신상품 포스터">
+                        <div class="sns-content">
+                            <div class="sns-title-row">
+                                <h2>신상 가챠!</h2>
+                                <div class="sns-icons" aria-label="SNS 채널">
+                                    <img src="./img/X.png" alt="X">
+                                    <img src="./img/Instagram_icon.png" alt="Instagram">
+                                    <img src="./img/img.png" alt="Facebook">
+                                </div>
+                            </div>
+                            <strong>@gatchapop 공식 트위터 X</strong>
+                            <p>귀여운 신상 가챠가 도착했어요!<br>가까이에서 만나 보세요.</p>
+                        </div>
+                    </article>
+                    </div>
+                    <button class="slider-button slider-next" type="button" aria-label="다음 상품">&#10095;</button>
+                 </div>
+            </div>
+        </section>
+
+        <dialog class="product-modal" aria-labelledby="product-modal-title">
+            <button class="product-modal-close" type="button" aria-label="모달 닫기">&times;</button>
+            <div class="product-modal-layout">
+                <img class="product-modal-image" src="" alt="">
+                <div class="product-modal-info">
+                    <h2 id="product-modal-title">시리즈 이름</h2>
+                    <p class="product-modal-price">개당 가격: 3000원</p>
+                    <p class="product-modal-brand">브랜드: Toy Land</p>
+                    <p class="product-modal-description"></p>
+                    <a class="product-modal-link" href="./Pickup/pickup.html">뽑으러 가기</a>
+                </div>
+            </div>
+        </dialog>
+
+        <section class="section3">
+            <div class="inner3">
+                <div class="maintext2">
+                    쉽게 가챠샵을  찾아보세요!
+                </div>
+                <div class="inputWrap">
+                    <div class="search-panel">
+                        <div class="search-row">
+                            <input type="text" placeholder="찾고싶은 가챠를 입력하세요!" aria-label="찾고 싶은 가챠 입력">
+                            <button type="button">Click</button>
+                        </div>
+                        <div class="btnBox" aria-label="검색 태그">
+                            <span class="tag-chip">직영점<button class="tag-remove" type="button" aria-label="직영점 태그 삭제">×</button></span>
+                            <span class="tag-chip">한국제품<button class="tag-remove" type="button" aria-label="한국제품 태그 삭제">×</button></span>
+                            <span class="tag-chip">안산<button class="tag-remove" type="button" aria-label="안산 태그 삭제">×</button></span>
+                            <span class="tag-chip">할인중<button class="tag-remove" type="button" aria-label="할인중 태그 삭제">×</button></span>
+                            <span class="tag-chip">반값<button class="tag-remove" type="button" aria-label="반값 태그 삭제">×</button></span>
+                            <button class="plus" type="button" aria-label="검색 태그 입력칸 추가">+</button>
+                        </div>
+                        <a class="shop-detail-link" href="./Pickup/pickup.html">자세히 보기&nbsp; GO!</a>
+                    </div>
+                    <img class="shop-speak" src="./all/SPEAK.svg" alt="어떤 가챠든 뽑을 수 있다퐁!">
+                    <img class="shop-character" src="./all/chara-nomal.svg" alt="굴러오는 퐁이">
+                    <div class="shop-machine machine-3d" aria-label="Rotatable 3D gacha machine">
+                        <canvas class="machine-3d-canvas"></canvas>
+                        <p class="machine-3d-status">Loading 3D machine...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section4의 시작 -->
+        <section class="section4">
+            <div class="inner4">
+                <div class="imgBox4">
+                    <img src="./all/shop01.png" alt="가챠오션 홍대점 내부 전경">
+                </div>
+                <div class="area-search">
+                    <h2 class="maintext4">지역별 검색으로도 쉽게!</h2>
+                    <div class="area-buttons" aria-label="지역 선택">
+                        <button class="active" type="button">서울</button>
+                        <button type="button">경기</button>
+                        <button type="button">부산</button>
+                        <button type="button">대구</button>
+                        <button type="button">인천</button>
+                    </div>
+                    <div class="area-content">
+                        <div class="area-character" role="img" aria-label="놀란 퐁이">
+                            <img class="character-part character-leg character-leg-left" src="./분해/다리.png" alt="">
+                            <img class="character-part character-leg character-leg-right" src="./분해/다리.png" alt="">
+                            <img class="character-part character-arm character-arm-left" src="./분해/팔.png" alt="">
+                            <img class="character-part character-arm character-arm-right" src="./분해/팔.png" alt="">
+                            <img class="character-part character-body" src="./분해/몸.png" alt="">
+                            <img class="character-part character-brow" src="./분해/눈썹3.png" alt="">
+                            <img class="character-part character-eyes" src="./분해/눈2.png" alt="">
+                            <img class="character-part character-mouth" src="./분해/입2.png" alt="">
+                        </div>
+                        <div class="area-links">
+                            <a class="area-more" href="#">지역 더보기</a>
+                            <a class="area-detail" href="#">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <!-- 캐릭터 소개 섹션 -->
+        <section class="section5">
+            <div class="inner5">
+                <div class="img5">
+                    <img src="./all/chara-nomal.svg" alt="가챠팝 마스코트 퐁이">
+                </div>
+                <div class="character-intro">
+                    <h2 class="maintext5">GATCHA POP<br>마스코트 ‘퐁이’</h2>
+                    <div class="character-faces" aria-label="퐁이의 다양한 표정">
+                        <img src="./all/chara-nomal.svg" alt="기본 표정의 퐁이">
+                        <img src="./all/chara_happy.svg" alt="행복한 표정의 퐁이">
+                        <img src="./all/chara-ohno.svg" alt="놀란 표정의 퐁이">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 브랜드별 신상 가챠 섹션 -->
+        <section class="section6">
+            <h2 class="maintext6">브랜드별 이번달 신상 가챠!</h2>
+            <div class="section6-slider">
+                
+                <div class="inner6">
+                    <div class="section6-products">
+                        <div class="new-item-card">
+                            <img src="./all/11.png" alt="이번 달 신상 가챠 상품">
+                            <div class="item-pages" aria-label="상품 페이지 선택">
+                                <button class="active" type="button">1</button>
+                                <button type="button">2</button>
+                                <button type="button">3</button>
+                                <button type="button">4</button>
+                                <button type="button">5</button>
+                                <button type="button">6</button>
+                            </div>
+                        </div>
+                        <ul class="brand-list" aria-label="브랜드별 신상 상품 수">
+                            <li><button type="button">굿스마일-1</button></li>
+                            <li><button type="button">가챠퐁-2</button></li>
+                            <li><button type="button">다카라토미-3</button></li>
+                            <li><button type="button">반다이-4</button></li>
+                            <li><button type="button">기사퐁-5</button></li>
+                            <li><button type="button">키탄-6</button></li>
+                        </ul>
+                    </div>
+                    <img class="section6-character" src="./all/chara_happy.svg" alt="신상 가챠를 소개하는 퐁이">
+                </div>
+
+            </div>
+        </section>
+        <!-- 푸터의 시작 -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a class="footer-logo" href="#top" aria-label="Gatcha Pop 홈으로 이동">
+                        <img src="./img/svg/logo(white).svg" alt="Gatcha Pop">
+                    </a>
+                    <div class="footer-copy">
+                        <p>좋아하는 마음을 뽑는 즐거움, GATCHA POP</p>
+                        <p class="footer-notice">저작권은 만든이에게 있으며 학생 개인 포트폴리오 입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- ---------------여기부턴 jsㅅ1작하는 부분 -->
+    <script>
+
+    </script>
+    <script src="./js/index.js"></script>
+    <script src="./js/hero-bubbles.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="./js/pong3d.js"></script>
+    <script type="module" src="./js/machine3d.js"></script>
+</body>
+</html>

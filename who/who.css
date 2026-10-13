@@ -1,0 +1,74 @@
+﻿@font-face {
+    font-family: "Jalnan2";
+    src:
+        url("../Jalnan2TTF.ttf") format("truetype"),
+        url("../Jalnan2.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --yellow: #FFCF4C;
+    --pink: #FF4E72;
+    --blue: #75C5C8;
+    --babyblue: #50A1A3;
+    --ink: #542A96;
+    --muted: #eaeff1;
+    --paper: rgba(255, 255, 255, 0.86);
+    font-family: "Jalnan2", sans-serif;
+}
+* { box-sizing: border-box; 
+font-family: "Jalnan2", sans-serif;}
+
+html { scroll-behavior: smooth; }
+::-webkit-scrollbar{
+        display: none;
+    }
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 70px;
+  background-color: #FF4E72;
+}
+body{ padding-top: 70px; }
+.inner{
+  width: min(1600px, calc(100% - 32px));
+  height: 100%;
+  margin: 0 auto;
+}
+nav{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav>ul{
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 2rem;
+  font-size: 1.5rem;
+  color: white;
+}
+nav>ul>li>a{
+
+}
+.logo{
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 15%;
+  height: 100%;
+  background-image: url(../all/logo-white.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+

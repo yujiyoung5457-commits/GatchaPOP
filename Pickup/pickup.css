@@ -1,0 +1,711 @@
+﻿@font-face {
+    font-family: "Jalnan2";
+    src:
+        url("../Jalnan2TTF.ttf") format("truetype"),
+        url("../Jalnan2.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --yellow: #FFCF4C;
+    --pink: #FF4E72;
+    --blue: #75C5C8;
+    --babyblue: #50A1A3;
+    --ink: #542A96;
+    --muted: #eaeff1;
+    --paper: rgba(255, 255, 255, 0.86);
+    font-family: "Jalnan2", sans-serif;
+}
+* { box-sizing: border-box; 
+font-family: "Jalnan2", sans-serif;}
+
+html { scroll-behavior: smooth; }
+::-webkit-scrollbar{
+        display: none;
+    }
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 70px;
+  background-color: #FF4E72;
+}
+body{ padding-top: 70px; }
+.inner{
+  width: min(1600px, calc(100% - 32px));
+  height: 100%;
+  margin: 0 auto;
+}
+nav{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav>ul{
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 2rem;
+  font-size: 1.5rem;
+  color: white;
+}
+nav>ul>li>a{
+
+}
+.logo{
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 15%;
+  height: 100%;
+  background-image: url(../all/logo-white.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+
+/* section1 - 기존 엇갈린 배치를 유지하는 원형 이미지 4줄 */
+.section1{
+  position: relative;
+  --circle-size: clamp(7rem, 10.5vw, 12rem);
+  width: 100%;
+  min-height: 100vh;
+  padding: 3rem 0 5rem;
+  overflow: hidden;
+}
+.maintxt{
+  position: absolute;
+  z-index: 10;
+  top: 40%;
+  left: 50%;
+  width: min(70rem, calc(100% - 2rem));
+  color: var(--ink);
+  font-size: clamp(4rem, 8vw, 9rem);
+  line-height: 1.05;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+.imgBox1,
+.imgBox2,
+.imgBox3,
+.imgBox4{
+  width: calc(100% + 12rem);
+  margin-bottom: clamp(1.5rem, 3vw, 3.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: clamp(1rem, 2vw, 2.5rem);
+}
+.imgBox1,
+.imgBox3{
+  margin-left: -1rem;
+}
+.imgBox2,
+.imgBox4{
+  margin-left: -6rem;
+}
+.imgBox1 img,
+.imgBox2 img,
+.imgBox3 img,
+.imgBox4 img{
+  display: block;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  flex: 0 0 var(--circle-size);
+  border-radius: 50%;
+  object-position: center;
+  object-fit: cover;
+  will-change: transform;
+  animation: rolling-circle 8s linear infinite;
+  opacity: 0.5;
+}
+.imgBox2 img,
+.imgBox4 img{
+  animation-direction: reverse;
+}
+.imgBox1 img:hover,
+.imgBox2 img:hover,
+.imgBox3 img:hover,
+.imgBox4 img:hover{
+  animation-play-state: paused;
+}
+@keyframes rolling-circle{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 900px){
+  .section1{
+    --circle-size: 8rem;
+    padding-block: 2rem 4rem;
+  }
+  .imgBox1,
+  .imgBox2,
+  .imgBox3,
+  .imgBox4{
+    width: max-content;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+  .imgBox1,
+  .imgBox3{
+    margin-left: -1rem;
+  }
+  .imgBox2,
+  .imgBox4{
+    margin-left: -5rem;
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  .imgBox1 img,
+  .imgBox2 img,
+  .imgBox3 img,
+  .imgBox4 img{
+    animation-play-state: paused;
+  }
+}
+
+/* section2 - 퐁이의 가챠 꿀팁 */
+.section2{
+  width: 100%;
+  height: 130vh;
+  min-height: 65rem;
+  overflow: hidden;
+}
+.pickup-tip-inner{
+  width: min(1600px, 100%);
+  height: 100%;
+  margin: 0 auto;
+  padding: 5rem 6rem 7rem;
+  display: grid;
+  grid-template-columns: minmax(26rem, 1fr) minmax(28rem, 1fr);
+  align-items: start;
+  gap: clamp(4rem, 8vw, 10rem);
+}
+.pickup-tip-left,
+.pickup-tip-right{
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pickup-tip-bubble{
+  position: relative;
+  width: min(35rem, 100%);
+  aspect-ratio: 560 / 390;
+  display: grid;
+  place-items: center;
+}
+.pickup-tip-bubble svg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.pickup-tip-bubble path{
+  fill: #fff;
+  stroke: var(--pink);
+  stroke-width: 5;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.pickup-tip-bubble p{
+  position: relative;
+  z-index: 1;
+  margin: -1.5rem 0 0;
+  color: var(--pink);
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  line-height: 1.15;
+  text-align: center;
+}
+.pickup-tip-character{
+  display: block;
+  width: min(26rem, 72%);
+  height: auto;
+  margin-top: 2rem;
+  transform: scaleX(-1);
+}
+.pickup-tip-right h2{
+  align-self: flex-start;
+  margin: 0 0 2rem;
+  color: var(--pink);
+  font-size: clamp(3rem, 4.8vw, 5.5rem);
+  line-height: 1.05;
+  white-space: nowrap;
+}
+.pickup-tip-product{
+  display: block;
+  width: min(34rem, 82%);
+  aspect-ratio: 1;
+  border-radius: 2.5rem;
+  object-fit: cover;
+}
+.pickup-tip-machines{
+  width: min(36rem, 95%);
+  margin-top: 4rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.pickup-tip-machines img{
+  position: relative;
+  display: block;
+  width: 15rem;
+  height: auto;
+  flex: 0 0 15rem;
+}
+.pickup-tip-machines img:nth-child(1){
+  z-index: 1;
+  transform: scaleX(-1) rotate(-2deg);
+}
+.pickup-tip-machines img:nth-child(2){
+  z-index: 3;
+  margin-left: -5.5rem;
+  transform: translateY(-1rem);
+}
+.pickup-tip-machines img:nth-child(3){
+  z-index: 2;
+  margin-left: -5.5rem;
+  transform: scaleX(-1) rotate(2deg);
+}
+@media (max-width: 900px){
+  .section2{
+    height: auto;
+    min-height: 130vh;
+  }
+  .pickup-tip-inner{
+    padding: 4rem 3rem 6rem;
+    grid-template-columns: minmax(20rem, 1fr) minmax(22rem, 1fr);
+    gap: 2rem;
+  }
+  .pickup-tip-machines img{
+    width: 11rem;
+    flex-basis: 11rem;
+  }
+  .pickup-tip-machines img:nth-child(2),
+  .pickup-tip-machines img:nth-child(3){
+    margin-left: -4rem;
+  }
+}
+@media (max-width: 700px){
+  .pickup-tip-right h2{
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    white-space: nowrap;
+  }
+  .pickup-tip-inner{
+    padding: 4rem 1.25rem 6rem;
+    grid-template-columns: 1fr;
+  }
+  .pickup-tip-right h2{
+    align-self: center;
+    text-align: center;
+  }
+  .pickup-tip-character{ width: min(20rem, 70%); }
+  .pickup-tip-product{ width: min(28rem, 90%); }
+}
+
+/* section3 - 하반기 신상 예약 */
+.section3{
+  width: 100%;
+  min-height: 110vh;
+}
+.reservation-inner{
+  width: min(1600px, 100%);
+  min-height: 110vh;
+  margin: 0 auto;
+  padding: 5rem 6rem 7rem;
+}
+.reservation-inner > h2{
+  margin: 0 0 4rem;
+  color: var(--pink);
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 1.08;
+}
+.reservation-cards{
+  width: min(78rem, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 6rem);
+}
+.reservation-card{
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.reservation-card > img{
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 2.5rem;
+  object-fit: cover;
+}
+.reservation-card h3{
+  margin: 1rem 0 .65rem;
+  padding: .65rem 1rem;
+  border-radius: 999px;
+  background: var(--pink);
+  color: #fff;
+  font-size: clamp(1rem, 1.6vw, 1.5rem);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+.reservation-card a{
+  padding: .75rem 1rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-size: clamp(1rem, 1.6vw, 1.45rem);
+  line-height: 1;
+  text-align: center;
+}
+.reservation-card a:focus-visible{
+  outline: 4px solid var(--yellow);
+  outline-offset: 4px;
+}
+.reservation-chart{
+  position: relative;
+  width: min(82rem, 100%);
+  margin: 4rem auto 0;
+  padding-left: 7rem;
+}
+.reservation-chart svg{
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.reservation-character{
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 3.2rem;
+  width: 9rem;
+  height: auto;
+  transform: rotate(-8deg);
+}
+.chart-guides line{
+  stroke: var(--pink);
+  stroke-width: 2;
+  stroke-dasharray: 7 6;
+}
+.chart-line{
+  fill: none;
+  stroke: var(--pink);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.chart-points circle{
+  fill: var(--pink);
+}
+.chart-label rect{
+  fill: var(--pink);
+}
+.chart-label text{
+  fill: #fff;
+  font-family: "Jalnan2", sans-serif;
+  font-size: 17px;
+}
+.chart-caption{
+  width: min(48rem, 80%);
+  margin: -1.4rem auto 0;
+  padding: .85rem 1.5rem;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-size: clamp(1.1rem, 2vw, 1.65rem);
+  text-align: center;
+}
+@media (max-width: 850px){
+  .reservation-inner{ padding: 4rem 3rem 6rem; }
+  .reservation-cards{ gap: 1.5rem; }
+  .reservation-chart{ padding-left: 5rem; }
+  .reservation-character{ width: 7rem; }
+}
+@media (max-width: 650px){
+  .section3,
+  .reservation-inner{ min-height: auto; }
+  .reservation-inner{ padding: 4rem 1.25rem 5rem; }
+  .reservation-inner > h2{
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .reservation-cards{
+    width: min(24rem, 100%);
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .reservation-chart{
+    margin-top: 4rem;
+    padding-left: 0;
+  }
+  .reservation-character{
+    left: -.5rem;
+    bottom: 2.5rem;
+    width: 5rem;
+  }
+  .chart-caption{ width: 90%; }
+}
+
+/* section4 - 베스트 리뷰와 이달의 가챠 캘린더 */
+.section4{
+  width: 100%;
+  min-height: 140vh;
+}
+.review-calendar-inner{
+  width: min(1600px, 100%);
+  margin: 0 auto;
+  padding: 5rem 6rem 8rem;
+}
+.review-calendar-inner > h2{
+  margin: 0 0 3rem;
+  color: var(--pink);
+  font-size: clamp(3rem, 5vw, 5.5rem);
+}
+.photo-review-slider{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.photo-review-list{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(3rem, 7vw, 8rem);
+}
+.photo-review-card{
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.photo-review-card > img{
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.photo-review-card strong{
+  margin-top: 1rem;
+  color: var(--ink);
+  font-size: 1.2rem;
+}
+.photo-review-card p{
+  margin-top: .35rem;
+  font-family: sans-serif;
+  font-size: .95rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.review-arrow{
+  flex: 0 0 3rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0 0 .15rem;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.review-promo{
+  min-height: 21rem;
+  margin: 3rem auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.review-happy-character{
+  display: block;
+  width: clamp(14rem, 20vw, 23rem);
+  height: auto;
+}
+.review-point-badge{
+  width: clamp(18rem, 27vw, 30rem);
+  aspect-ratio: 1.55;
+  display: grid;
+  place-items: center;
+  padding: 3rem;
+  background: var(--yellow);
+  color: var(--pink);
+  clip-path: polygon(50% 0%, 61% 14%, 78% 6%, 83% 24%, 100% 27%, 91% 44%, 100% 59%, 82% 66%, 80% 86%, 61% 80%, 49% 100%, 38% 82%, 18% 91%, 17% 70%, 0% 61%, 10% 44%, 1% 28%, 21% 23%, 25% 5%, 40% 14%);
+  font-size: clamp(1.5rem, 2.5vw, 2.8rem);
+  line-height: 1.15;
+  text-align: center;
+}
+.calendar-intro{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.calendar-title{
+  color: var(--pink);
+  text-align: right;
+}
+.calendar-title p{
+  margin: 0 0 .3rem;
+  font-size: 1.1rem;
+}
+.calendar-title h3{
+  margin: 0;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+}
+.calendar-intro > img{
+  width: 7rem;
+  height: auto;
+}
+.calendar-speech{
+  position: relative;
+  margin-right: auto;
+  padding: 1.2rem 2.5rem;
+  border: .25rem solid var(--pink);
+  border-radius: 50%;
+  color: var(--pink);
+  font-size: 1.1rem;
+  text-align: center;
+}
+.calendar-speech::after{
+  content: "";
+  position: absolute;
+  right: 12%;
+  bottom: -1.1rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-right: .25rem solid var(--pink);
+  border-bottom: .25rem solid var(--pink);
+  background: #fff;
+  transform: rotate(35deg) skew(10deg);
+}
+.gacha-calendar{
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  align-items: start;
+  gap: 2rem;
+}
+.calendar-month{
+  display: flex;
+  align-items: flex-end;
+  color: var(--ink);
+}
+.calendar-month strong{
+  font-size: 7rem;
+  line-height: .8;
+}
+.calendar-month span{
+  margin-left: .35rem;
+  font-size: 1.5rem;
+}
+.calendar-grid{
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border-bottom: 1px solid #cfd4d6;
+}
+.calendar-weekday,
+.calendar-day{
+  position: relative;
+  min-height: 6.5rem;
+  padding: .8rem .5rem;
+  border-bottom: 1px solid #cfd4d6;
+  font-family: sans-serif;
+  font-size: .85rem;
+  text-align: center;
+}
+.calendar-weekday{
+  min-height: 3.2rem;
+  font-weight: 900;
+}
+.sunday{ color: var(--pink); }
+.saturday{ color: #4164c8; }
+.event-dot{
+  position: absolute;
+  bottom: .3rem;
+  left: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+.event-dot + .event-dot{ margin-left: 1.4rem; }
+.event-dot.pink{ background: var(--pink); }
+.event-dot.blue{ background: var(--blue); }
+.event-dot.yellow{ background: var(--yellow); }
+.event-dot.purple{ background: var(--ink); }
+.event-dot.royal{ background: #4152c9; }
+
+@media (max-width: 850px){
+  .review-calendar-inner{ padding: 4rem 3rem 6rem; }
+  .photo-review-list{ gap: 2rem; }
+  .gacha-calendar{
+    grid-template-columns: 7rem 1fr;
+    gap: 1rem;
+  }
+  .calendar-month strong{ font-size: 5rem; }
+}
+@media (max-width: 650px){
+  .section4{ min-height: auto; }
+  .review-calendar-inner{ padding: 4rem 1.25rem 5rem; }
+  .review-calendar-inner > h2{ text-align: center; }
+  .photo-review-slider{ gap: .5rem; }
+  .photo-review-list{
+    grid-template-columns: 1fr;
+    width: min(22rem, calc(100% - 4rem));
+    margin: auto;
+  }
+  .photo-review-card:nth-child(n+2){ display: none; }
+  .review-arrow{
+    flex-basis: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .review-promo{
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .calendar-intro{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .calendar-speech{ margin: 0; }
+  .calendar-title{ text-align: center; }
+  .gacha-calendar{
+    grid-template-columns: 1fr;
+  }
+  .calendar-month{ justify-content: center; }
+  .calendar-weekday,
+  .calendar-day{
+    min-height: 4.8rem;
+    padding-inline: .15rem;
+    font-size: .7rem;
+  }
+  .event-dot{
+    width: .85rem;
+    height: .85rem;
+  }
+}
+
+
+

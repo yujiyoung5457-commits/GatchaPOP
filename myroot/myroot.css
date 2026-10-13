@@ -1,0 +1,371 @@
+﻿@font-face {
+    font-family: "Jalnan2";
+    src:
+        url("../Jalnan2TTF.ttf") format("truetype"),
+        url("../Jalnan2.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --yellow: #FFCF4C;
+    --pink: #FF4E72;
+    --blue: #75C5C8;
+    --babyblue: #50A1A3;
+    --ink: #542A96;
+    --muted: #eaeff1;
+    --paper: rgba(255, 255, 255, 0.86);
+    font-family: "Jalnan2", sans-serif;
+}
+* { box-sizing: border-box; 
+font-family: "Jalnan2", sans-serif;}
+
+html { scroll-behavior: smooth; }
+::-webkit-scrollbar{
+        display: none;
+    }
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 70px;
+  background-color: #FF4E72;
+}
+body{ padding-top: 70px; }
+.inner{
+  width: min(1600px, calc(100% - 32px));
+  height: 100%;
+  margin: 0 auto;
+}
+nav{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav>ul{
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 2rem;
+  font-size: 1.5rem;
+  color: white;
+}
+nav>ul>li>a{
+
+}
+.logo{
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 15%;
+  height: 100%;
+  background-image: url(../all/logo-white.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+/* ==================================================
+   section1: 나의 가챠 도감과 쿠폰
+   ================================================== */
+.section1{
+  width: 100%;
+  min-height: 160vh;
+  overflow: hidden;
+}
+.myroot-hero{
+  position: relative;
+  width: min(1500px, 100%);
+  min-height: 160vh;
+  margin: 0 auto;
+  padding: 5rem 6rem 7rem;
+}
+.myroot-hero h1{
+  position: relative;
+  z-index: 5;
+  margin: 0;
+  color: var(--pink);
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 1.28;
+}
+
+/* 같은 dogami.svg 2개를 크기와 rotate 값만 다르게 배치 */
+.dogam-card{
+  position: absolute;
+  z-index: 3;
+  display: block;
+  height: auto;
+}
+.dogam-card-small{
+  top: 16rem;
+  left: 7rem;
+  width: clamp(23rem, 31vw, 34rem);
+  transform: rotate(-10deg);
+}
+.dogam-card-large{
+  top: 35rem;
+  right: 7rem;
+  bottom: auto;
+  width: clamp(34rem, 47vw, 51rem);
+  transform: rotate(17deg);
+}
+
+/* 쿠폰 이미지 자리: 실제 이미지가 생기면 이 div를 img로 교체 */
+.coupon-placeholder{
+  position: absolute;
+  z-index: 4;
+  width: clamp(15rem, 24vw, 25rem);
+  min-height: 8rem;
+  display: grid;
+  place-items: center;
+  border-radius: 1.5rem;
+  background: #d8d8d8;
+  color: #999;
+  font-family: sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+.coupon-placeholder-top{
+  top: 12rem;
+  right: 8rem;
+  transform: rotate(14deg);
+}
+.coupon-placeholder-bottom{
+  top: 48rem;
+  left: 4rem;
+  bottom: auto;
+  transform: rotate(-13deg);
+}
+
+/* 작은 캡슐 배경 장식 위치 */
+.myroot-ball{
+  position: absolute;
+  z-index: 1;
+  display: block;
+  width: clamp(4rem, 7vw, 7rem);
+  height: auto;
+}
+.ball-one{
+  top: 5rem;
+  right: 4rem;
+  transform: rotate(15deg);
+}
+.ball-two{
+  top: 28rem;
+  right: 34%;
+  transform: rotate(-22deg);
+}
+.ball-three{
+  top: 48rem;
+  right: 3rem;
+  bottom: auto;
+  transform: rotate(12deg);
+}
+.ball-four{
+  top: 64rem;
+  left: 7rem;
+  bottom: auto;
+  transform: rotate(-16deg);
+}
+.ball-five{
+  left: 45%;
+  top: 8rem;
+  transform: rotate(20deg);
+}
+
+@media (max-width: 900px){
+  .myroot-hero{
+    min-height: 68rem;
+    padding: 4rem 3rem 6rem;
+  }
+  .dogam-card-small{
+    left: 3rem;
+    width: 27rem;
+  }
+  .dogam-card-large{
+    right: 2rem;
+    width: 38rem;
+  }
+  .coupon-placeholder-top{ right: 3rem; }
+}
+@media (max-width: 650px){
+  .section1,
+  .myroot-hero{
+    min-height: auto;
+  }
+  .myroot-hero{
+    padding: 4rem 1.25rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  .myroot-hero h1{
+    text-align: center;
+  }
+  .dogam-card,
+  .coupon-placeholder{
+    position: relative;
+    inset: auto;
+  }
+  .dogam-card-small{
+    width: min(25rem, 82vw);
+    transform: rotate(-6deg);
+  }
+  .coupon-placeholder-top{
+    width: min(20rem, 75vw);
+    transform: rotate(6deg);
+  }
+  .dogam-card-large{
+    width: min(29rem, 92vw);
+    transform: rotate(8deg);
+  }
+  .coupon-placeholder-bottom{
+    width: min(20rem, 75vw);
+    transform: rotate(-6deg);
+  }
+  .myroot-ball{
+    display: none;
+  }
+}
+
+/* ==================================================
+   section2: 쿠폰이 적용되는 가챠 바로가기
+   ================================================== */
+.section2{
+  width: 100%;
+  min-height: 100vh;
+}
+.coupon-gacha-inner{
+  position: relative;
+  width: min(1200px, 100%);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 5rem 6rem 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.coupon-gacha-inner h2{
+  align-self: flex-start;
+  margin: 0 0 5rem;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1.08;
+}
+.coupon-gacha-inner h2 span,
+.coupon-gacha-inner h2 strong{
+  display: block;
+}
+.coupon-gacha-inner h2 span{
+  color: var(--pink);
+  text-decoration: underline;
+  text-decoration-thickness: .12em;
+  text-underline-offset: .08em;
+}
+.coupon-gacha-inner h2 strong{
+  color: var(--ink);
+}
+.coupon-gacha-balls{
+  width: min(58rem, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+.coupon-gacha-balls img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.coupon-gacha-link{
+  margin-top: 4rem;
+  min-width: 20rem;
+  padding: 1.5rem 3rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  text-align: center;
+  transition: transform .2s ease, background .2s ease;
+}
+.coupon-gacha-link:hover{
+  background: var(--pink);
+  transform: translateY(-.3rem);
+}
+.coupon-gacha-link:focus-visible{
+  outline: .35rem solid var(--yellow);
+  outline-offset: .4rem;
+}
+@media (max-width: 650px){
+  .section2,
+  .coupon-gacha-inner{
+    min-height: auto;
+  }
+  .coupon-gacha-inner{
+    padding: 4rem 1.25rem 5rem;
+  }
+  .coupon-gacha-inner h2{
+    align-self: center;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .coupon-gacha-balls{
+    gap: 1rem;
+  }
+  .coupon-gacha-link{
+    min-width: min(20rem, 85vw);
+    margin-top: 3rem;
+  }
+}
+
+/* ==================================================
+   section3: 나만의 가챠 도감 만들기
+   ================================================== */
+.section3{
+  width: 100%;
+  min-height: 110vh;
+}
+.custom-dogam-inner{
+  width: min(1200px, 100%);
+  min-height: 110vh;
+  margin: 0 auto;
+  padding: 5rem 6rem 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.custom-dogam-inner h2{
+  align-self: flex-end;
+  margin: 0 0 3rem;
+  color: var(--pink);
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 1.08;
+  text-align: right;
+}
+.custom-dogam-image{
+  display: block;
+  width: min(55rem, 82%);
+  height: auto;
+}
+@media (max-width: 650px){
+  .section3,
+  .custom-dogam-inner{
+    min-height: auto;
+  }
+  .custom-dogam-inner{
+    padding: 4rem 1.25rem 5rem;
+  }
+  .custom-dogam-inner h2{
+    align-self: center;
+    text-align: center;
+  }
+  .custom-dogam-image{
+    width: min(34rem, 96%);
+  }
+}

@@ -1,0 +1,230 @@
+﻿@font-face {
+    font-family: "Jalnan2";
+    src:
+        url("../Jalnan2TTF.ttf") format("truetype"),
+        url("../Jalnan2.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --yellow: #FFCF4C;
+    --pink: #FF4E72;
+    --blue: #75C5C8;
+    --babyblue: #50A1A3;
+    --ink: #542A96;
+    --muted: #eaeff1;
+    --paper: rgba(255, 255, 255, 0.86);
+    font-family: "Jalnan2", sans-serif;
+}
+* { box-sizing: border-box; 
+font-family: "Jalnan2", sans-serif;}
+
+html { scroll-behavior: smooth; }
+::-webkit-scrollbar{
+        display: none;
+    }
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 70px;
+  background-color: #FF4E72;
+}
+body{ padding-top: 70px; }
+.inner{
+  width: min(1600px, calc(100% - 32px));
+  height: 100%;
+  margin: 0 auto;
+}
+nav{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav>ul{
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 2rem;
+  font-size: 1.5rem;
+  color: white;
+}
+nav>ul>li>a{
+
+}
+.logo{
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 15%;
+  height: 100%;
+  background-image: url(../all/logo-white.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+/* section1 - login */
+.section1{
+  width: 100%;
+  min-height: calc(100vh - 70px);
+}
+.login-section-inner{
+  width: min(1300px, 100%);
+  min-height: calc(100vh - 70px);
+  margin: 0 auto;
+  padding: 4rem 6rem 5rem;
+  display: grid;
+  grid-template-columns: minmax(24rem, 1fr) minmax(22rem, .9fr);
+  align-items: center;
+  gap: clamp(4rem, 8vw, 10rem);
+}
+.login-panel{
+  width: min(34rem, 100%);
+  margin: 0 auto;
+}
+.login-panel h1{
+  margin: 0 0 2rem;
+  color: var(--babyblue);
+  font-family: sans-serif;
+  font-size: clamp(3.5rem, 5vw, 5.5rem);
+  font-weight: 900;
+  text-align: center;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+.login-form input{
+  width: 100%;
+  height: 4.5rem;
+  padding: 0 2rem;
+  border: .25rem solid var(--pink);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 1.35rem;
+  outline: none;
+}
+.login-form input::placeholder{
+  color: #cfcfcf;
+  opacity: 1;
+}
+.login-form input:focus{
+  box-shadow: 0 0 0 .3rem rgba(255, 207, 76, .6);
+}
+.login-form button{
+  height: 4.5rem;
+  margin-top: .25rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--pink);
+  color: #fff;
+  font-size: 1.55rem;
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+.login-form button:hover{
+  transform: translateY(-.2rem);
+}
+.sns-login-title{
+  margin: 2.5rem 0 1.2rem;
+  color: #222;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.sns-login-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.sns-login{
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+.sns-login.naver{ background: #1ec800; }
+.sns-login.kakao{ background: #ffd400; color: #3c1e1e; }
+.sns-login.facebook{ background: #315c9a; }
+.sns-login.apple{ background: #000; }
+.signup-guide{
+  margin-top: 2rem;
+  color: var(--pink);
+  font-size: 1.25rem;
+  text-align: center;
+}
+.signup-guide a{
+  margin-left: .5rem;
+  color: var(--babyblue);
+}
+.login-visual{
+  position: relative;
+  min-height: 34rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.login-machine{
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(20rem, 72%);
+  height: auto;
+}
+.login-character{
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 3rem;
+  display: block;
+  width: clamp(9rem, 13vw, 14rem);
+  height: auto;
+}
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 800px){
+  .login-section-inner{
+    padding: 4rem 3rem 5rem;
+    gap: 2rem;
+  }
+  .login-visual{ min-height: 28rem; }
+  .login-machine{ width: min(17rem, 78%); }
+  .login-character{ width: 9rem; }
+}
+@media (max-width: 650px){
+  .login-section-inner{
+    padding: 4rem 1.25rem 5rem;
+    grid-template-columns: 1fr;
+  }
+  .login-visual{
+    min-height: 27rem;
+    justify-content: center;
+  }
+  .login-character{
+    left: 10%;
+    bottom: 2rem;
+  }
+}

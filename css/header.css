@@ -1,0 +1,94 @@
+/* 메인(index)과 동일한 공용 헤더 */
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 70px;
+  background-color: #FF4E72;
+}
+body{ padding-top: 70px; }
+.inner{
+  width: min(1600px, calc(100% - 32px));
+  height: 100%;
+  margin: 0 auto;
+}
+nav{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav > ul{
+  position: relative;
+  width: 85%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 1.5rem;
+  color: white;
+}
+nav > ul > li{
+  --drop-height: 8.5rem;
+  --drop-delay: 0ms;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+nav > ul > li::before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 999px 999px;
+  background: #FF4E72;
+  opacity: .7;
+  transform: translateX(-50%);
+  transition: height 520ms cubic-bezier(.22, .8, .28, 1.08), filter 220ms ease;
+  transition-delay: var(--drop-delay);
+  pointer-events: none;
+}
+nav > ul > li > a{
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+}
+nav > ul > li:nth-child(1){ --drop-height: 12rem; --drop-delay: 0ms; }
+nav > ul > li:nth-child(2){ --drop-height: 8rem; --drop-delay: 55ms; }
+nav > ul > li:nth-child(3){ --drop-height: 19rem; --drop-delay: 110ms; }
+nav > ul > li:nth-child(4){ --drop-height: 21rem; --drop-delay: 165ms; }
+nav > ul > li:nth-child(5){ --drop-height: 13.5rem; --drop-delay: 220ms; }
+nav > ul:hover > li::before,
+nav > ul:focus-within > li::before{
+  height: var(--drop-height);
+  filter: drop-shadow(0 .35rem 0 rgba(255, 78, 114, .18));
+}
+nav > ul > li:hover::before,
+nav > ul > li:focus-within::before{
+  height: calc(var(--drop-height) + 1.25rem);
+}
+.logo{
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 15%;
+  height: 100%;
+  background-image: url("../all/logo-white.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+@media (prefers-reduced-motion: reduce){
+  nav > ul > li::before{ height: 100%; transition: none; }
+}
