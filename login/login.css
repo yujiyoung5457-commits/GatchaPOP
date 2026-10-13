@@ -207,7 +207,8 @@ nav>ul>li>a{
 }
 @media (max-width: 800px){
   .login-section-inner{
-    padding: 4rem 3rem 5rem;
+    padding: 4rem 2rem 5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
   }
   .login-visual{ min-height: 28rem; }

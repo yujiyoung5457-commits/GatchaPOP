@@ -153,13 +153,15 @@ nav>ul>li>a{
   }
   .drop-hero-copy h1{
     white-space: normal;
+    font-size: clamp(2.3rem, 10vw, 3.5rem);
   }
   .drop-hero-copy p{
     margin-bottom: 3rem;
   }
   .drop-draw-button{
-    min-width: min(28rem, calc(100vw - 3rem));
+    min-width: min(28rem, calc(100vw - 4rem));
     padding: 2rem 2.5rem;
+    font-size: clamp(2rem, 9vw, 3.5rem);
   }
   .drop-character{
     width: min(11rem, 34vw);

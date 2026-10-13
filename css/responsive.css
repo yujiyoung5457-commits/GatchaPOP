@@ -1,0 +1,30 @@
+@media (min-width: 769px){
+  header nav > ul > li:not(:last-child) > a::after{
+    content: "|";
+    margin-inline: .8rem;
+  }
+}
+
+@media (max-width: 1024px){
+  .logo{ width: auto; flex: 0 0 clamp(8rem, 20vw, 10rem); }
+  nav > ul{ width: auto; flex: 1; justify-content: space-evenly; gap: .35rem; font-size: clamp(.95rem, 2vw, 1.2rem); }
+  nav > ul > li > a{ padding-inline: .35rem; }
+}
+
+@media (max-width: 768px){
+  header{ height: 112px; }
+  body{ padding-top: 112px; }
+  header .inner{ width: min(100% - 24px, 1600px); }
+  header nav{ flex-direction: column; justify-content: flex-start; }
+  header .logo{ width: clamp(7rem, 31vw, 9rem); height: 48px; flex: 0 0 48px; margin-inline: auto; }
+  header nav > ul{ width: 100%; height: 64px; flex: 0 0 64px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; font-size: clamp(.68rem, 2.55vw, .95rem); }
+  header nav > ul > li{ min-width: 0; height: 100%; justify-content: center; }
+  header nav > ul > li::before{ display: none; }
+  header nav > ul > li > a{ padding-inline: clamp(.15rem, .8vw, .4rem); }
+}
+
+@media (max-width: 480px){
+  header .inner{ width: calc(100% - 16px); }
+  header nav > ul{ font-size: .62rem; }
+  header nav > ul > li > a{ padding-inline: .1rem; }
+}

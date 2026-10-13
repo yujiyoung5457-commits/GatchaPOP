@@ -1636,3 +1636,77 @@ nav>ul>li:focus-within::before{
 .machine-3d.is-ready .machine-3d-status{display:none}
 @media(max-width:1100px){.inputWrap > .shop-machine.machine-3d{width:25rem;height:36rem}}
 @media(max-width:760px){.inputWrap > .shop-machine.machine-3d{position:relative;width:min(20rem,80vw);height:min(29rem,116vw);margin:-3rem auto 0}}
+
+/* Responsive safety net: keep the desktop composition and let narrow screens flow naturally. */
+@media (max-width: 1100px){
+  .inner_section{ padding: 4rem 3rem; }
+  .txtBox1{ width: 56%; }
+  .imgBox{ width: 42%; transform: none; }
+  .txtBox1 > .pong-3d{ left: auto; right: -8rem; }
+  .pong-3d--bottom{ left: auto; right: 3rem; width: min(32rem, 52vw); }
+}
+
+@media (max-width: 900px){
+  .section2,
+  .section3,
+  .section4,
+  .section5,
+  .section6{
+    height: auto;
+    min-height: auto;
+  }
+  .section2{ overflow: hidden; }
+}
+
+@media (max-width: 768px){
+  .heroSection1{
+    height: auto;
+    min-height: auto;
+  }
+  .inner_section{
+    min-height: 0;
+    padding: 3rem 1.25rem 5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .txtBox1{
+    position: relative;
+    width: min(29rem, 92%);
+  }
+  .txtBox1 > .hero-word:nth-child(1){ width: 72%; margin: 0 auto; }
+  .txtBox1 > .hero-word:nth-child(2){ width: 72%; margin: .6rem auto 0; gap: 1.5rem; }
+  .txtBox1 > .hero-word:nth-child(3){ width: 100%; margin: .8rem auto 0; padding: 0; }
+  .txtBox1 > .hero-word:nth-child(4){ width: 82%; margin: .8rem auto 0; }
+  .hero-pickup-button{ padding: .8rem 1rem; transform: none; }
+  .txtBox1 > .pong-3d{ display: none; }
+  .imgBox{
+    width: min(28rem, 92vw);
+    height: 30rem;
+    transform: none;
+  }
+  .pong-3d--bottom{
+    position: relative;
+    inset: auto;
+    width: min(22rem, 78vw);
+    margin: -4rem auto 0;
+    transform: rotate(-12deg);
+  }
+  .inner2{ width: 100%; }
+  .slider-wrap{ margin-top: 2rem; }
+  .imgBox4{ min-height: min(34rem, 105vw); }
+  .img5 img,
+  .character-intro{ padding-top: 0; }
+}
+
+@media (max-width: 480px){
+  .inner_section{ padding-inline: 1rem; }
+  .imgBox{ height: 24rem; }
+  .search-row{ flex-direction: column; align-items: stretch; }
+  .search-row button{ width: 100%; }
+  .area-content{ grid-template-columns: 1fr; }
+  .area-character{ margin: 2rem auto 0; }
+  .area-links{ gap: 1rem; }
+  .area-more,
+  .area-detail{ width: 100%; padding: 1.2rem; font-size: 1.25rem; }
+}
