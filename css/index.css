@@ -1710,3 +1710,190 @@ nav>ul>li:focus-within::before{
   .area-more,
   .area-detail{ width: 100%; padding: 1.2rem; font-size: 1.25rem; }
 }
+
+/* index mobile header and SNS slider */
+.mobile-menu-toggle{
+  display: none;
+}
+
+@media (max-width: 768px){
+  body.index-page{
+    padding-top: 56px;
+  }
+  body.index-page header{
+    height: 56px;
+  }
+  body.index-page header .inner{
+    width: 100%;
+    padding-inline: 1.25rem;
+  }
+  body.index-page header nav{
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  body.index-page header nav::after{
+    content: "☰";
+    position: absolute;
+    top: 50%;
+    right: .3rem;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    transform: translateY(-52%);
+    pointer-events: none;
+  }
+  body.index-page header nav:has(.mobile-menu-toggle[aria-expanded="true"])::after{
+    content: "×";
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+  body.index-page header .logo{
+    width: 6.9rem;
+    height: 100%;
+    flex: 0 0 6.9rem;
+    margin: 0;
+    background-position: left center;
+  }
+  body.index-page .mobile-menu-toggle{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: .62rem;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  body.index-page .mobile-menu-toggle::before{
+    content: "";
+  }
+  body.index-page .mobile-menu-toggle span{
+    display: none;
+    width: 100%;
+    height: 3px;
+    border-radius: 999px;
+    background: #fff;
+    transition: transform 200ms ease, opacity 200ms ease;
+  }
+  body.index-page .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  body.index-page .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2){
+    opacity: 0;
+  }
+  body.index-page .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  body.index-page .mobile-menu-toggle[aria-expanded="true"]::before{
+    content: "";
+  }
+  body.index-page header nav > ul{
+    position: absolute;
+    top: 100%;
+    left: -1.25rem;
+    width: calc(100% + 2.5rem);
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
+    padding: 0 1.25rem;
+    background: var(--pink);
+    flex: none;
+    flex-direction: column;
+    gap: 0;
+    font-size: .95rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 250ms ease, padding 250ms ease, opacity 180ms ease;
+  }
+  body.index-page header nav > ul.is-open{
+    max-height: 22rem;
+    padding-block: .5rem 1rem;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  body.index-page header nav > ul > li{
+    width: 100%;
+    height: auto;
+    min-height: 2.75rem;
+    justify-content: flex-start;
+  }
+  body.index-page header nav > ul > li::before{
+    display: none;
+  }
+  body.index-page header nav > ul > li > a{
+    width: 100%;
+    padding: .8rem .25rem;
+  }
+
+  body.index-page .section2{
+    padding: 3.5rem 0 4rem;
+  }
+  body.index-page .inner2{
+    width: 100%;
+    padding: 0;
+  }
+  body.index-page .maintext1{
+    padding: 0 1.25rem;
+    font-size: clamp(1.85rem, 8vw, 3rem);
+    line-height: 1.2;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+    opacity: 1;
+    transform: none;
+  }
+  body.index-page .slider-wrap{
+    width: 100%;
+    height: 32rem;
+    margin-top: 1.75rem;
+    padding: 0 .65rem;
+    grid-template-columns: 2.35rem minmax(0, 1fr) 2.35rem;
+    column-gap: .45rem;
+  }
+  body.index-page .slider{
+    --card-gap: .75rem;
+    height: 100%;
+    padding: .25rem 0 .75rem;
+  }
+  body.index-page .sns-card{
+    flex-basis: 100%;
+    height: 100%;
+  }
+  body.index-page .slider-button{
+    width: 2.35rem;
+    height: 2.35rem;
+    font-size: 1rem;
+  }
+  body.index-page .sns-content{
+    padding: .9rem 1rem;
+  }
+  body.index-page .sns-title-row h2{
+    font-size: 1.05rem;
+  }
+  body.index-page .sns-icons{
+    gap: .35rem;
+  }
+  body.index-page .sns-icons img{
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  body.index-page .mobile-menu-toggle span,
+  body.index-page header nav > ul{
+    transition: none;
+  }
+}

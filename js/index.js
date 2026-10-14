@@ -138,6 +138,36 @@ const slider = document.querySelector('.slider');
 const prevButton = document.querySelector('.slider-prev');
 const nextButton = document.querySelector('.slider-next');
 
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const indexNavigation = document.querySelector('#index-navigation');
+
+if (mobileMenuToggle && indexNavigation) {
+  const closeMobileMenu = () => {
+    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+    mobileMenuToggle.setAttribute('aria-label', '메뉴 열기');
+    indexNavigation.classList.remove('is-open');
+  };
+
+  mobileMenuToggle.addEventListener('click', () => {
+    const willOpen = mobileMenuToggle.getAttribute('aria-expanded') !== 'true';
+    mobileMenuToggle.setAttribute('aria-expanded', String(willOpen));
+    mobileMenuToggle.setAttribute('aria-label', willOpen ? '메뉴 닫기' : '메뉴 열기');
+    indexNavigation.classList.toggle('is-open', willOpen);
+  });
+
+  indexNavigation.addEventListener('click', (event) => {
+    if (event.target.closest('a')) closeMobileMenu();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMobileMenu();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeMobileMenu();
+  });
+}
+
 if (slider && prevButton && nextButton) {
   const originalCards = [...slider.querySelectorAll('.sns-card')];
 
